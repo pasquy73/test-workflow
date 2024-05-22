@@ -1,16 +1,9 @@
 {
-    "name": "nodejs-image-demo",
+    "name": "nodejs-test",
     "version": "1.0.0",
-    "description": "nodejs image demo",
-    "author": "Sammy the Shark <sammy@example.com>",
+    "description": "nodejs image test",
+    "author": "",
     "license": "MIT",
     "main": "app.js",
-    "keywords": [
-      "nodejs",
-      "bootstrap",
-      "express"
-    ],
-    "dependencies": {
-      "express": "^4.16.4"
-    }
+    "keywords": []
   }
