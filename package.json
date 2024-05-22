@@ -5,5 +5,8 @@
     "author": "",
     "license": "MIT",
     "main": "app.js",
-    "keywords": []
+    "keywords": [],
+    "scripts": {
+      "start": "node app.js"
+    }
   }
