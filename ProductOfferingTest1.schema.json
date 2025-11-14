@@ -1,26 +1,59 @@
 {
    "$schema":"http://json-schema.org/draft-07/schema#",
-   "$id":"#ProductOfferingExtension",
-   "title":"ProductOfferingExtension",
-   "description":"DOME extensions for TMForum Product Offering",
-   "allOf":[
-      {
-         "$ref":"https://raw.githubusercontent.com/tmforum-rand/schemas/candidates/Product/ProductOffering.schema.json"
-      },
-      {
-         "type":"object",
-         "properties":{
-            "cloudesireProductVersionId":{
-               "type":"number",
-               "description":"CloudeSire product version identifier"
-            },
-            "pricingLogicAlgorithm":{
-               "$ref":"https://raw.githubusercontent.com/DOME-Marketplace/tmf-api/refs/heads/main/schemas/Product/PricingLogicAlgorithm.schema.json"
-            },
-            "relatedParty":{
-               "$ref": "https://raw.githubusercontent.com/DOME-Marketplace/dome-odrl-profile/refs/heads/main/schemas/simplified/RelatedPartyRef.schema.json#/properties/relatedParty"
+   "$id":"#RelatedPartyRef",
+   "title":"RelatedPartyRef",
+   "description":"This reference contains a list of related party references.",
+   "type":"object",
+   "properties":{
+      "relatedParty":{
+         "type":"array",
+         "description":"List of references to related parties.",
+         "items":{
+            "required":[
+               "id",
+               "href"
+            ],
+            "type":"object",
+            "properties":{
+               "id":{
+                  "type":"string",
+                  "description":"Unique identifier of a related entity."
+               },
+               "did":{
+                  "type":"string",
+                  "description":"eIDAS identifier of a related entity in did:elsi format."
+               },
+               "href":{
+                  "type":"string",
+                  "description":"Reference of the related entity."
+               },
+               "name":{
+                  "type":"string",
+                  "description":"Name of the related entity."
+               },
+               "role":{
+                  "type":"string",
+                  "description":"Role played by the related party"
+               },
+               "@baseType":{
+                  "type":"string",
+                  "description":"When sub-classing, this defines the super-class"
+               },
+               "@schemaLocation":{
+                  "type":"string",
+                  "description":"A URI to a JSON-Schema file that defines additional attributes and relationships",
+                  "format":"uri"
+               },
+               "@type":{
+                  "type":"string",
+                  "description":"When sub-classing, this defines the sub-class entity name"
+               },
+               "@referredType":{
+                  "type":"string",
+                  "description":"The actual type of the target instance when needed for disambiguation."
+               }
             }
          }
       }
-   ]
+   }
 }
